@@ -9,6 +9,7 @@ import {
   Text,
   TouchableRipple,
   Switch,
+  
 } from "react-native-paper";
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 
@@ -16,6 +17,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const { height } = Dimensions.get("screen");
 // console.log(height);
+const iconSize = 25;
 
 function DrawerContent(props) {
   return (
@@ -27,8 +29,162 @@ function DrawerContent(props) {
       }}
     >
       <DrawerContentScrollView {...props}>
-        <View>
-          <Text>Hello</Text>
+        <View>          
+          <Drawer.Section>
+            <DrawerItem
+              style={{ display: "flex", color: "white" }}
+              label={({ focused, color }) => (
+                <Text
+                  style={{
+                    color: "white",
+                    fontFamily: "monospace",
+                    fontSize: 16,
+                  }}
+                >
+                  Home
+                </Text>
+              )}
+              icon={({ focused, color, size }) => (
+                <Icon
+                  // style={{ position: "absolute", right: 10 }}
+                  color="white"
+                  size={iconSize}
+                  name="home-outline"
+                />
+              )}
+              onPress={() => {
+                props.navigation.navigate("Home");
+              }}
+            />
+
+            <DrawerItem
+              style={{ display: "flex", color: "white" }}
+              label={({ focused, color }) => (
+                <Text
+                  style={{
+                    color: "white",
+                    fontFamily: "monospace",
+                    fontSize: 16,
+                  }}
+                >
+                  Search
+                </Text>
+              )}
+              icon={({ focused, color, size }) => (
+                <Icon
+                  // style={{ position: "absolute", right: 10 }}
+                  color="white"
+                  size={iconSize}
+                  name="magnify"
+                />
+              )}
+              onPress={() => {
+                props.navigation.navigate("Search");
+              }}
+            />
+            <DrawerItem
+              style={{ display: "flex", color: "white" }}
+              label={({ focused, color }) => (
+                <Text
+                  style={{
+                    color: "white",
+                    fontFamily: "monospace",
+                    fontSize: 16,
+                  }}
+                >
+                  Bookmarks
+                </Text>
+              )}
+              icon={({ focused, color, size }) => (
+                <Icon
+                  // style={{ position: "absolute", right: 10 }}
+                  color="white"
+                  size={iconSize}
+                  name="bookmark-multiple-outline"
+                />
+              )}
+              onPress={() => {
+                props.navigation.navigate("Bookmarks");
+              }}
+            />
+            <DrawerItem
+              style={{ display: "flex", color: "white" }}
+              label={({ focused, color }) => (
+                <Text
+                  style={{
+                    color: "white",
+                    fontFamily: "monospace",
+                    fontSize: 16,
+                  }}
+                >
+                  Profile
+                </Text>
+              )}
+              icon={({ focused, color, size }) => (
+                <Icon
+                  // style={{ position: "absolute", right: 10 }}
+                  color="white"
+                  size={iconSize}
+                  name="account-box"
+                />
+              )}
+              onPress={() => {
+                props.navigation.navigate("Profile");
+              }}
+            />
+            <DrawerItem
+              style={{ display: "flex", color: "white" }}
+              label={({ focused, color }) => (
+                <Text
+                  style={{
+                    color: "white",
+                    fontFamily: "monospace",
+                    fontSize: 16,
+                  }}
+                >
+                  Friends
+                </Text>
+              )}
+              icon={({ focused, color, size }) => (
+                <Icon
+                  // style={{ position: "absolute", right: 10 }}
+                  color="white"
+                  size={iconSize}
+                  name="account-multiple-plus"
+                />
+              )}
+              onPress={() => {
+                props.navigation.navigate("Friends");
+              }}
+            />
+            <DrawerItem
+              style={{ display: "flex", color: "white" }}
+              label={({ focused, color }) => (
+                <Text
+                  style={{
+                    color: "white",
+                    fontFamily: "monospace",
+                    fontSize: 16,
+                  }}
+                >
+                  Settings
+                </Text>
+              )}
+              icon={({ focused, color, size }) => (
+                <Icon
+                  // style={{ position: "absolute", right: 10 }}
+                  color="white"
+                  size={iconSize}
+                  name="cog"
+                />
+              )}
+              onPress={() => {
+                props.navigation.navigate("Settings");
+              }}
+            />
+            
+            
+          </Drawer.Section>
         </View>
       </DrawerContentScrollView>
       <Drawer.Section>
@@ -43,9 +199,9 @@ function DrawerContent(props) {
           )}
           icon={({ focused, color, size }) => (
             <Icon
-              style={{ position: "absolute", right: 10 }}
+              // style={{ position: "absolute", right: 10 }}
               color="white"
-              size={30}
+              size={iconSize}
               name="exit-to-app"
             />
           )}

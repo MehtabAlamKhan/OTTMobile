@@ -9,6 +9,7 @@ import Friends from "./../Screens/Friends";
 import Settings from "./../Screens/Settings";
 import SearchStack from "./searchStack";
 import DrawerContent from "../Screens/DrawerContent";
+import Bookmarks from "./../Screens/Bookmarks"
 
 const Drawer = createDrawerNavigator();
 
@@ -22,6 +23,7 @@ export default function LeftDrawerNavigation() {
       >
         <Drawer.Screen name="Home" component={HomeStack} />
         <Drawer.Screen name="Search" component={SearchStack} />
+        <Drawer.Screen name="Bookmarks" component={Bookmarks} />
         <Drawer.Screen name="Profile" component={Profile} />
         <Drawer.Screen name="Friends" component={Friends} />
         <Drawer.Screen name="Settings" component={Settings} />
