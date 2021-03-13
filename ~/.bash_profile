@@ -1,0 +1,1 @@
+export ANDROID_SDK=D:\Gameplays\Sdk
