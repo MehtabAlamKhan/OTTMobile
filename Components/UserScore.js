@@ -45,7 +45,7 @@ function UserScore({ score, width }) {
           stroke="none"
           fill="none"
           strokeWidth="5"
-          strokeDasharray={`${score === 0 ? "100" : "0"}`}
+          strokeDasharray={`${score === 0 ? "100" : "0"},660`}
         ></Circle>
         <Circle
           r={width === 35 ? "15" : "17"}
@@ -54,7 +54,7 @@ function UserScore({ score, width }) {
           stroke={color()}
           fill="none"
           strokeWidth="5"
-          strokeDasharray={`${percentage()}`}
+          strokeDasharray={`${percentage()},660`}
         ></Circle>
       </Svg>
       <Text
@@ -65,7 +65,7 @@ function UserScore({ score, width }) {
         }}
         id="circle-percentage"
       >
-        {score === 0 ? "NA" : `${score}`}
+        {score === 0 ? "NA" : `${parseFloat(score).toFixed(1)}`}
       </Text>
     </View>
   );
